@@ -2,10 +2,17 @@
   "name": "parcel-hw",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "homepage": "https://0qsenxx.github.io/librarys-and-frameworks-hw/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /librarys-and-frameworks-hw",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0qsenxx/librarys-and-frameworks-hw.git"
   },
   "keywords": [],
   "author": "0qsenxx",
@@ -13,5 +20,8 @@
   "dependencies": {
     "chart.js": "^4.4.1",
     "parcel": "^2.11.0"
+  },
+  "devDependencies": {
+    "pnotify": "^5.2.0"
   }
 }

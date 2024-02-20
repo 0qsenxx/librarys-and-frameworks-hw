@@ -1,3 +1,8 @@
+import { alert, defaultModules, error } from "@pnotify/core";
+import * as PNotifyMobile from "@pnotify/mobile";
+
+defaultModules.set(PNotifyMobile, {});
+
 // ?1
 const keyPressRef = document.querySelector("[data-key=press]");
 const startGameBtnRef = document.querySelector("[data-button=startGame]");
@@ -40,7 +45,9 @@ startGameBtnRef.addEventListener("click", function startGame(evt) {
       score++;
       peopleScoreTextRef.textContent = score;
     } else {
-      alert("Ви програли(");
+      error({
+        title: "Ви програли(",
+      });
       score = 0;
       randomIdx = 0;
       peopleScoreTextRef.textContent = score;
